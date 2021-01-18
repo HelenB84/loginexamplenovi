@@ -5,6 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
@@ -16,10 +20,13 @@ export default function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/login">Login</Link>
               </li>
               <li>
-                <Link to="/users">Users</Link>
+                <Link to="/signup">Sign up</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
           </nav>
@@ -27,11 +34,14 @@ export default function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
-              <About />
+            <Route path="/profile">
+              <Profile/>
             </Route>
-            <Route path="/users">
-              <Users />
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <Route path="/signup">
+              <SignUp />
             </Route>
             <Route path="/">
               <Home />
@@ -42,14 +52,4 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
